@@ -28,7 +28,7 @@ const CreatePost = () => {
     if (form.prompt) {
       try {
         setGeneratingImg(true);
-        const response = await fetch('https://dalle-arbb.onrender.com/api/v1/dalle', {
+        const response = await fetch('https://dapodi3.onrender.com/api/v1/dalle', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -46,7 +46,7 @@ const CreatePost = () => {
         setGeneratingImg(false);
       }
     } else {
-      alert('Please provide proper prompt');
+      alert('Please provide proper prompt to Chitra');
     }
   };
 
@@ -56,7 +56,7 @@ const CreatePost = () => {
     if (form.prompt && form.photo) {
       setLoading(true);
       try {
-        const response = await fetch('https://dalle-arbb.onrender.com/api/v1/post', {
+        const response = await fetch('https://dapodi3.onrender.com/api/v1/post', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -90,7 +90,7 @@ const CreatePost = () => {
             labelName="Your Name"
             type="text"
             name="name"
-            placeholder="Ex., john doe"
+            placeholder="Ex., Devansh"
             value={form.name}
             handleChange={handleChange}
           />
@@ -135,17 +135,17 @@ const CreatePost = () => {
             onClick={generateImage}
             className=" text-white bg-green-700 font-medium rounded-md text-sm w-full sm:w-auto px-5 py-2.5 text-center"
           >
-            {generatingImg ? 'Generating...' : 'Generate'}
+            {generatingImg ? 'Generating... please wait' : 'Generate'}
           </button>
         </div>
 
         <div className="mt-10">
-          <p className="mt-2 text-[#666e75] text-[14px]">** Once you have created the image you want, you can share it with others in the community **</p>
+          <p className="mt-2 text-[#666e75] text-[14px]">** Once you have created the image you want, you can share it with others in the art community powered by syst platforms**</p>
           <button
             type="submit"
             className="mt-3 text-white bg-[#6469ff] font-medium rounded-md text-sm w-full sm:w-auto px-5 py-2.5 text-center"
           >
-            {loading ? 'Sharing...' : 'Share with the Community'}
+            {loading ? 'Sharing...' : 'Share with Arr Community'}
           </button>
         </div>
       </form>
